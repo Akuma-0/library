@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{%block title%}
+Profile
+{%endblock%}
+{%block style%}
+.container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .profile-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .profile-email {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+ .edit-profile-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .edit-profile-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+{%endblock%}
+{%block content%}
+ <div class="container">
+        <h1>User Profile</h1>
+        <div class="profile-info">
+            <div class="profile-name">{{ user.first_name }} {{ user.last_name }}</div>
+            <div class="profile-email">{{ user.email }}</div>
+        </div>
+        <div class="edit-profile-link">
+            <a href="{% url 'edit_profile' %}">Edit Profile</a>
+        </div>
+    </div>
+{%endblock%}

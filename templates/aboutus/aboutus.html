@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{%block title%}
+About
+        {%endblock%}
+{%block style%}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+#t {
+    background-color:#848484;
+    color: white;
+    text-align: center;
+margin:0;
+    padding: 20px;
+  }
+  .section-title {
+    color: #333;
+    margin-top: 0;
+  }
+  .section-content {
+    color: #666;
+  }
+  .benefits {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .benefit {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+  }
+        {%endblock%}
+{%block content%}
+<h1 id="t">About Us</h1>
+<br>
+ <div class="container">
+    <h2 class="section-title">Our Mission</h2>
+    <p class="section-content">Our mission is simple yet powerful - to make the world of literature accessible to anyone with an internet connection. We're on a quest to foster a community of readers who can embark on intellectual journeys, broaden their horizons, and find solace in the written word, all without a price tag.</p>
+
+    <h2 class="section-title">What We Offer</h2>
+    <p class="section-content">Immerse yourself in our vast digital library filled with an array of genres, ranging from timeless classics to contemporary masterpieces, all available for borrowing at no cost.</p>
+
+    <h2 class="section-title">Our Vision</h2>
+    <p class="section-content">We envision a world where the transformative power of literature is within reach of all individuals, regardless of their background or circumstances. By eliminating financial barriers, we strive to create a global community of informed and engaged readers.</p>
+
+    <h2 class="section-title">Join Us</h2>
+    <p class="section-content">For the latest updates, literary events, and book recommendations, follow us on <a href="https://twitter.com/" target="_blank">Twitter</a> . Join us in our commitment to spreading the love of reading without cost barriers..</p>
+
+    <h2 class="section-title">Contact Us</h2>
+    <p class="section-content">Have questions, suggestions, or feedback? We're here to listen. Reach out to our friendly support team at <a href="mailto:library@book.net">library@book.net</a> to share your thoughts or seek assistance.</p>
+  </div>
+        {%endblock%}

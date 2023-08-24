@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{%block title%}
+Contact Us
+        {%endblock%}
+{%block style%}
+#t {
+    background-color:#848484;
+    color: white;
+    text-align: center;
+margin:0;
+    padding: 20px;
+  }
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+text-align: center;
+}
+
+.contact-info {
+  margin-top: 20px;
+}
+
+.contact-info ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: #000;
+}
+{%endblock%}
+{%block content%}
+<h1 id="t">Contact Us</h1>
+<br>
+<br>
+<div class="container">
+<div class="contact-info">
+<ul>
+<li><a href="mailto: library@book.net">Email: library@book.net</a></li>
+<li><a href="tel:1234567890">Phone: (123)-456-78</a></li>
+</ul>
+</div>
+    <br>
+<br>
+<div class="contact-info">
+<ul>
+<li>123 Main Street</li>
+<li>Anytown, CA 12345</li>
+<li>Monday-Friday: 9am-5pm</li>
+<li>Saturday: 10am-2pm</li>
+<li>Sunday: Closed</li>
+</ul>
+</div>
+</div>
+{%endblock%}

@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{%block title%}
+{{b.title}}
+{%endblock%}
+{%block style%}
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.book-image {
+    flex: 1;
+    text-align: center;
+}
+
+.book-image img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: #333;
+}
+
+.book-details {
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+}
+
+h2 {
+    color: #333;
+    margin-top: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+a.borrow {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 10px;
+border-radius: 10px;
+}
+
+a.borrow:hover {
+    background-color: #0056b3;
+}
+
+.availability {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+
+{%endblock%}
+{%block content%}
+<br>
+<br>
+<div class="container">
+<header>
+            <h1>Book Details</h1>
+        </header>
+        <main>
+            <section class="book-details">
+                <div class="book-image">
+                    <img src="{{b.image.url}}" alt="{{b.title}}">
+                </div>
+                <h2>Title:</h2>
+                <p>{{b.title}}</p>
+                <h2>Author:</h2>
+                <p>{{b.author_name}}</p>
+                <h2>Genre:</h2>
+                 {% for g in b.genre.all %}
+                    <p>{{ g.name }}</p>
+                {% endfor %}
+                <h2>Description:</h2>
+                <p>{{b.summary}}</p>
+
+
+                <p style="font-size: 25px; color:green">Avilable: {%if b.is_available%} {{b.is_available}} {%else%}{{b.availability_date}}{%endif%}</p>
+                <a  class="borrow" href="/book/{{b.id}}/">Borrow This Book</a>
+            </section>
+            </main>
+    </div>
+<br>
+<br>
+<br>
+<br>
+{%endblock%}

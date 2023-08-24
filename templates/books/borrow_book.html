@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{%block title%}
+Borrow
+{%endblock%}
+{% block content %}
+  <h1>{{ book.title }}</h1>
+  <p>Author: {{ book.author_name }}</p>
+  <p>Summary: {{ book.summary }}</p>
+  <p>Genres:
+    {% for genre in book.genre.all %}
+      {{ genre.name }}{% if not forloop.last %}, {% endif %}
+    {% endfor %}
+  </p>
+
+  {% if user.is_authenticated %}
+    <h2>Borrow this Book</h2>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Borrow</button>
+    </form>
+  {% else %}
+    <p><a href="/User/login/">Log in</a> to borrow this book.</p>
+  {% endif %}
+{% endblock %}

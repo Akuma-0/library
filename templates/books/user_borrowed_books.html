@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{%block title%}
+Borrowed Books
+{%endblock%}
+{% block content %}
+  <h1>Your Borrowed Books</h1>
+  {% if borrowed_books %}
+    <ul>
+      {% for borrow in borrowed_books %}
+        <li>
+          {{ borrow.book.title }} (Return by: {{ borrow.return_date }})
+          <a href="{% url 'return_book' borrow.id %}">Return</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>You haven't borrowed any books yet.</p>
+  {% endif %}
+{% endblock %}
